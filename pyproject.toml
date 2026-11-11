@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lob"
+version = "0.1.0"
+description = "Mid-price direction prediction from limit order book data, with low-latency C++ inference"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "torch",
+    "scikit-learn",
+    "matplotlib",
+    "onnx",
+    "onnxscript",
+    "onnxruntime==1.31.*",  # same version as the C++ runtime in cpp/CMakeLists.txt
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff==0.17.*"]
+
+[tool.setuptools]
+packages = ["lob"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::UserWarning"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

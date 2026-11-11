@@ -1,0 +1,1 @@
+{"samples": 2000, "accuracy": 0.818500, "same_class_as_onnxruntime": 1.000000, "identical_logits": 1.000000, "max_logit_difference_lsb": 0, "iters": 5000, "mean_ns": 74378.5, "min_ns": 73541, "p50_ns": 73917, "p90_ns": 75042, "p99_ns": 82125, "p999_ns": 87958, "max_ns": 92208}
